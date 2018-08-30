@@ -4,7 +4,7 @@
 ////////////////////////////////////////////////////////////
 
 #define positive 3
-#define negative 4
+#define negative 2
 #define sig A0
 volatile unsigned int v = 0;
 volatile byte flag = 0;
@@ -28,12 +28,13 @@ void loop()
   	Serial.print("$");
     Serial.println(v);
     flag = 0;
+    
   }
 }
 
 void timer_init()
 {
-  //set timer2 interrupt at 8kHz
+  
   TCCR2A = 0;// set entire TCCR2A register to 0
   TCCR2B = 0;// same for TCCR2B
   TCNT2  = 0;//initialize counter value to 0
